@@ -38,5 +38,5 @@ All Mobile Software Upgrading and Unlocking Training (Android, IOS, Windows)
 Gorilla Glass Removing and Fixing
 Re-balling IC
 
-Course fees: Rs. 40000 + Exam fees: Rs. 600 (Including Lab fee & working tools)
+Course fees: Rs. 40000 + Exam fees: Rs. 600 (Including Lab fee & working tools).
 For Further details please visit us or call our institute at 0474 2740601, 8139848484
