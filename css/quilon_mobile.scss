@@ -351,7 +351,7 @@
     font-style: normal; 
 	font-display: fallback; 
 }
-/*@font-face {
+@font-face {
     font-family: 'Open Sans';
     src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
         url('../fonts/OpenSans-Regular.woff') format('woff');
@@ -366,7 +366,7 @@
     font-weight: bold;
     font-style: normal;
     font-display: fallback; 
-}*/
+}
 @font-face {
     font-family: 'Haritha';
     src: url('../fonts/Haritha.woff2') format('woff2'),
@@ -399,8 +399,7 @@
   content: "\e900"; 
 }
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css"); 
+@import url("font-awesome-all.css");
 @import url("pgwslideshow.css"); 
 
 //body
