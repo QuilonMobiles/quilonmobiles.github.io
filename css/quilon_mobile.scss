@@ -1,0 +1,1008 @@
+/* Quilon Mobile Scss Document */
+
+//mixins      
+@mixin hover {
+    @include transition(color 0.6s linear);
+    &:hover {
+        color: #ee2e2d;
+        @include transition(color 0.6s linear);
+    }
+    &:focus {
+        color: #ee2e2d;
+        @include transition(color 0s linear);
+    }
+    &:active {
+        color: #BC100F;
+        @include transition(color 0s linear);
+    }
+}
+
+@mixin hovers($obj1, $obj2) {
+    @include transition(color 0.6s linear);
+    &:hover,
+    &:focus {
+        color: $obj1;
+        @include transition(color 0.6s linear);
+    }
+    &:active {
+        color: $obj2;
+        @include transition(all 0s linear);
+    }
+}
+
+@mixin btn_hover {
+    @include transin_all;
+    &:hover,
+    &:focus {
+        color: #18253F;
+        background-color: #ee2e2d;
+        @include transin_all;
+    }
+    &:active {
+        color: #18253F;
+        background-color: #ee2e2d;
+        @include box-shadow(inset 1px 1px 3px 2px rgba(0, 0, 0, 0.15));
+        @include transition(all 0s linear);
+    }
+}
+
+@mixin btn_hovers($obj1, $obj2) {
+    @include transin_all;
+    &:hover,
+    &:focus {
+        color: $obj1;
+        background-color: #ffffff;
+        @include transin_all;
+    }
+    &:active {
+        color: $obj2;
+        background-color: #ffffff;
+        @include transition(all 0s linear);
+    }
+}
+
+@mixin abs {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+} 
+
+@mixin fixed {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+@mixin transin_all {
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+}
+
+@mixin transition($val) {
+    transition: $val;
+    -webkit-transition: $val;
+    -moz-transition: $val;
+    -o-transition: $val;
+}
+
+@mixin form_elem($obj) {
+    select::-ms-expand {
+        display: none;
+    }
+    input::-webkit-input-placeholder {
+        color: $obj;
+    }
+    input::-moz-placeholder {
+        color: $obj;
+    }
+    input:-ms-input-placeholder {
+        color: $obj;
+    }
+    input:-moz-placeholder {
+        color: $obj;
+    }
+    textarea::-webkit-input-placeholder {
+        color: $obj;
+    }
+    textarea::-moz-placeholder {
+        color: $obj;
+    }
+    textarea:-ms-input-placeholder {
+        color: $obj;
+    }
+    textarea:-moz-placeholder {
+        color: $obj;
+    }
+}
+
+@mixin apperance($obj) {
+    -webkit-appearance: $obj;
+    -moz-appearance: $obj;
+}
+
+@mixin linear-gradient-H($obj, $obj2, $obj3) {
+    background-image: linear-gradient($obj + deg, $obj2, $obj3);
+    background-image: -webkit-linear-gradient($obj - 90 + deg, $obj2, $obj3);
+    background-image: -o-linear-gradient($obj + deg, $obj2, $obj3);
+}
+
+@mixin linear-gradient-V($obj, $obj2, $obj3) {
+    background-image: linear-gradient($obj + deg, $obj2, $obj3);
+    background-image: -webkit-linear-gradient($obj + 90 + deg, $obj2, $obj3);
+    background-image: -moz-linear-gradient($obj + deg, $obj2, $obj3);
+    background-image: -o-linear-gradient($obj + deg, $obj2, $obj3);
+}
+
+@mixin linear-gradient-to($obj, $obj2, $obj3) {
+    background-image: linear-gradient($obj, $obj2, $obj3);
+    background-image: -webkit-linear-gradient($obj, $obj2, $obj3);
+    background-image: -moz-linear-gradient($obj, $obj2, $obj3);
+    background-image: -o-linear-gradient($obj, $obj2, $obj3);
+}
+
+@mixin radial-gradient($obj, $obj2, $obj3, $obj4) {
+    background-image: radial-gradient($obj, $obj2, $obj3, $obj4);
+    background-image: -webkit-radial-gradient($obj, $obj2, $obj3, $obj4);
+    background-image: -moz-radial-gradient($obj, $obj2, $obj3, $obj4);
+    background-image: -o-radial-gradient($obj, $obj2, $obj3, $obj4);
+}
+
+@mixin border-radius($color) {
+    border-radius: $color;
+    -webkit-border-radius: $color;
+    -moz-border-radius: $color;
+}
+
+@mixin transform($prop) {
+    transform: $prop;
+    -webkit-transform: $prop;
+    -moz-transform: $prop;
+    -ms-transform: $prop;
+    -o-transform: $prop;
+}
+
+@mixin transform-origin($prop) {
+    transform-origin: $prop;
+    -webkit-transform-origin: $prop;
+    -moz-transform-origin: $prop;
+    -ms-transform-origin: $prop;
+    -o-transform-origin: $prop;
+}
+
+@mixin box-shadow($val) {
+    box-shadow: $val;
+    -webkit-box-shadow: $val;
+    -moz-box-shadow: $val;
+}
+
+@mixin animation($anim1) {
+    animation: $anim1;
+    -webkit-animation: $anim1;
+    -moz-animation: $anim1;
+    -o-animation: $anim1;
+}
+
+@mixin outline($obj) {
+    outline: $obj;
+    &:focus {
+        outline: $obj;
+    }
+}
+
+@mixin backface-visibility($obj) {
+    backface-visibility: $obj;
+    -webkit-backface-visibility: $obj;
+    -moz-backface-visibility: $obj;
+}
+
+@mixin user-select($obj) {
+    -ms-user-select: $obj;
+    -webkit-user-select: $obj;
+    -moz-user-select: $obj; 
+}
+
+@mixin hyphens($obj) {
+    hyphens: $obj;
+    -webkit-hyphens: $obj;
+    -moz-hyphens: $obj;
+    -ms-hyphens: $obj;
+}
+
+@mixin flex {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+}
+
+@mixin flexin($obj) {
+    flex: $obj;
+    -webkit-flex: $obj;
+    -ms-flex: $obj;
+}
+
+@mixin flex-direction($obj) {
+    flex-direction: $obj;
+    -webkit-flex-direction: $obj;
+    -ms-flex-direction: $obj;
+}
+
+@mixin align-items($obj) {
+    align-items: $obj;
+    -webkit-align-items: $obj;
+}
+
+@mixin space-between {
+    @include justify-content(space-between);
+}
+
+@mixin scrollbar($obj1, $obj2, $obj3, $obj4, $obj5) {
+    ::-webkit-scrollbar {
+        width: $obj1;
+        height: $obj2;
+    }
+    ::-webkit-scrollbar-track {
+        background: $obj3;
+        border: none;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $obj4;
+        display: block;
+        @include border-radius(6px);
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background-color: $obj5;
+    }
+}
+
+@mixin select {
+    select::-ms-expand {
+        display: none;
+    }
+}
+
+@mixin justify-content($obj) {
+    justify-content: $obj;
+    -webkit-justify-content: $obj;
+}
+
+@mixin filter($obj) {
+    filter: $obj;
+    -webkit-filter: $obj;
+}
+
+@mixin activebtn {
+    @include box-shadow(inset 1px 1px 3px 2px rgba(0, 0, 0, 0.15));
+    @include transition(all 0s);
+}
+
+@mixin activetrans {
+    @include transition(all 0s);
+}
+
+@mixin bgim {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin bgimtop {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin bgbefore($obj) {
+    &:before {
+        content: " ";
+        background-color: $obj;
+        @include abs;
+        z-index: 1;
+    }
+}
+
+@mixin hr($obj1, $obj2){
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-top-color: $obj1;
+    border-bottom-color: $obj2;
+}
+
+@mixin focus-color($obj1){
+	&.btn-primary, &.btn-secondary{
+		&:focus{
+			border-color: $obj1;
+		}
+	}
+}
+
+@mixin QLMob-btn{
+    @include hovers(#ffffff, #ffffff);
+    color: #fff;
+    &:focus{
+        box-shadow: none;
+    }
+    &:active{
+        @include activebtn;
+    }
+    &.btn-primary{
+        background-color: #2a669c;
+        border-color: #225581; 
+    }
+    &.btn-secondary{
+        background-color: #636363;
+        border-color: #525252; 
+    }
+	@include focus-color(#4a3e3e);
+}
+//Fonts
+@font-face {
+    font-family: 'ALIENS GT';
+    src: url('../fonts/ALIENSGT.woff2') format('woff2'),
+        url('../fonts/ALIENSGT.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; 
+	font-display: fallback; 
+}
+/*@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+        url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback; 
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+        url('../fonts/OpenSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback; 
+}*/
+@font-face {
+    font-family: 'Haritha';
+    src: url('../fonts/Haritha.woff2') format('woff2'),
+        url('../fonts/Haritha.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	font-display: fallback; 
+}
+@font-face {
+  font-family: 'QuilonMobiles';
+  src:  url('../fonts/QuilonMobiles.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback; 
+}
+
+[class^="QLMob-"], [class*=" QLMob-"] {
+  font-family: 'QuilonMobiles' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.QLMob-hand:before {
+  content: "\e900"; 
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css"); 
+@import url("pgwslideshow.css"); 
+
+//body
+#QLMob_bdy{
+	font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+	word-wrap: break-word;
+    #QLMob_lodin1{
+        background-color: #ffffff;
+        @include flex;
+        align-items: center;
+        justify-content: center;
+        @include fixed;
+        z-index: 3;
+        #QLMob_lodin2{
+            img{
+                max-width: 100px;
+            }
+        }
+    }
+    header, main, footer{
+    	visibility: hidden;
+    }
+	a{
+		@include hover;
+		&.btn{
+			@include QLMob-btn; 
+		}
+	}
+    b, strong{
+       font-weight: bold;
+    }
+	img{
+		width: 100%;
+		height: auto;
+	}
+	//font classes
+	.alienGT{
+		font-family: 'ALIENS GT';
+	}
+	.Haritha{
+		font-family: 'Haritha';
+		font-size: 128%;
+    	line-height: normal
+	}
+	.malayalam{
+		font-size: 84%;
+		li{
+			font-size: 100%;
+		}
+	}
+    .Opansans{
+        font-family: 'Open Sans', sans-serif;
+    }
+    .row-center{
+        @include align-items(center);
+    }
+    .row-lg-center{
+        @media (min-width: 1200px){
+            @include align-items(center);
+        }
+    }
+    .row-md-center{
+        @media (min-width: 992px){
+            @include align-items(center);
+        }
+    }
+	.no-wrap{
+		white-space: nowrap;
+	}
+    .row-sm-center{
+        @media (min-width: 768px){
+            @include align-items(center);
+        }
+    }
+	.col-5-lg{
+		@media (min-width: 992px){
+			-webkit-box-flex: 0;
+			-ms-flex: 0 0 20%;
+			flex: 0 0 20%;
+			max-width: 20%;
+		}
+	}
+	.btn{
+		white-space: normal;
+	}
+    .QLMob_form{
+        padding: 24px 0px;
+        label{
+            width: 100%;
+            .form-control{
+                font-size: 14px;
+                &:focus{
+                    border-color: #ef3e3e;
+                    box-shadow: 0 0 0 0.2rem hsla(0, 85%, 64%, 1);
+                }
+            }
+        }
+        .btn-group{
+            button{
+                &.btn{
+                   @include QLMob-btn;
+					white-space: normal;
+                }
+            }
+        }
+    }
+	#QLMob_nav{
+		font-family: 'ALIENS GT';
+		.navbar-brand{
+			width: 224px;
+			height: auto;
+		}
+		.navbar-toggler{
+			position: absolute;
+			right: 0px;
+			top: 48px;
+			outline: none;
+			.navbar-toggler-icon{
+				color: #333;
+				@include hovers(#29659b, #29659b);
+				
+			}
+		}
+		#QLMob_nav_content{
+			.navbar-nav{
+				margin: 0px 0px -26px;
+				padding: 0px;
+				@media (max-width: 991px){
+					margin: 0px;
+				}
+			}
+			li{
+				a{
+					font-size: 18px;
+					color: #333;
+					@include hover;
+                    @media (max-width: 991px){
+                        padding: 0.5rem 9px;
+                    }
+				}
+			}
+		}
+	}
+    
+    //Mains
+    main{
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+	
+    [id*="QLMob_"]{
+        h2{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        h4{
+            font-size: 16px;
+            font-weight: bold;
+        }
+        h5{
+            font-size: 16px; 
+            font-weight: normal;
+        }
+        p{
+            font-size: 16px;
+            margin-bottom: 9px;
+        }
+        ul{
+            font-size: 16px;
+            li{
+                font-size: 100%;
+                ul{
+                    font-size: 100%;
+                }
+				&.malayalam{
+					font-size: 84%;
+					li{
+						font-size: 100%;
+					}
+				}
+            }
+			&.malayalam{
+				font-size: 84%;
+				li{
+					font-size: 100%;
+				}
+			}
+        }
+        &.list-hand{
+            ul{
+                li{
+                    position: relative;
+                    list-style-type: none;
+                    &:before{
+                        font-family: 'QuilonMobiles';
+                        font-size: 19px;
+                        content: "\e900";
+                        position: absolute;
+                        left: auto;
+                        top: -1px;
+                        right: 100%;
+                        margin-right: 12px;
+                    }
+                }
+            }
+        }
+    }
+    #QLMob_jumbo_1{
+        background-image: url("../images/institute/Quilon_Mobiles_Lab.jpg");
+        background-size: cover;
+        padding-bottom: 149%;
+        position: relative; 
+		min-height: 370px;
+       .jumbotron{ 
+			background: none;
+			@include abs;
+			min-height: 100%;
+			@include flex;
+			@include align-items(center);
+			@include justify-content(center);
+			margin: 0px;
+			h1{
+				font-size: 60px;
+				line-height: 76%; 
+				margin-bottom: 18px; 
+			}
+			p{
+			font-size: 22px;
+			line-height: normal;
+			}
+			h1, p{
+			color: #ffffff;
+			}
+			a{
+				&.btn{
+					margin: 24px auto;
+					@include hovers(#ffffff, #ffffff);
+					@include focus-color(#1a4061);
+				}
+			}
+			&:before{
+			content: " ";
+			background-color: rgba(0,0,0,0.60);
+			@include abs;
+			z-index: 0;
+			}
+			.QLMob_jumbo_content{
+			padding: 24px;
+			word-break: break-word;
+			position: relative;
+			z-index: 1;
+			}
+		   @media (max-width: 319px){
+			   position: static;
+		   }
+        } 
+		@media (max-width: 319px){
+			padding: 0px;
+		}
+    }
+    #QLMob_Institute{
+        background-color: #000;
+        padding: 24px 0px;
+        h2, h3, h4, h5, h6, p, ul{
+            color: #ffffff;
+        }
+        h3, h3{
+            font-size: 20px;
+        }
+        p, ul{
+            font-size: 16px;
+        }
+        .QLMob_Institute_1{
+            padding: 24px 12px 24px 0px;
+            hr{
+                margin-bottom: 0px;
+                @include hr(#666, rgba(51,51,51,0.00));
+            }
+        }
+        .QLMob_Institute_2{
+            padding: 24px 12px 24px 0px;
+            .Qmob_im1{
+                background-size: cover;
+                background-position: center center;
+                display: block;
+                width: 100%;
+                padding-bottom: 56.25%;
+				border: 6px solid #ee2e2d;
+                img{
+                    display: none;
+                }
+            }
+        }
+    }
+    #QLMob_Technology{
+        background-color: #1a4061;
+        padding: 24px 0px;
+        h2, h3, h4, p{
+            color: #ffffff;
+        }
+		h3{
+			background-color: #163855;
+    		padding: 12px;
+		}
+        hr{
+            @include hr(#1c4569, #183a59);
+        }
+		a{
+			color: #ffffff;
+			@include hovers(#8ebae1, #77ACDA);
+			text-decoration: none;
+		}
+        .QLMob_Techno_1{
+            padding: 24px 0px 12px 0px;
+        }
+        .QLMob_Techno_2, .QLMob_Techno_2_1{
+            padding: 12px;
+            img{
+                border: 6px solid #163855;
+                @include border-radius(2px);
+            }
+        }
+    }
+    #QLMob_Services{
+        color: #ffffff;
+        background-color: #2A669C;
+        padding: 24px 0px;
+        hr{
+            @include hr(hsla(208, 58%, 41%, 1), hsla(208, 58%, 36%, 1));
+        }
+        h3{
+            color: #e9e51c;
+            margin-bottom: 17px;
+        }
+        .QLMob_Services_1{
+            padding: 12px 24px 12px 0px;
+        }
+        .QLMob_Services_2{
+            padding: 24px 12px 24px 0px;
+            img{
+                margin-bottom: 24px;
+				border: 6px solid #275f91;
+            }
+        }
+    }
+    #QLMob_About{
+        background-color: #eee;
+        padding: 24px 0px 42px;
+        hr{
+            @include hr(#f5f5f5, #e6e6e6);
+            margin-bottom: 0px;
+        }
+        .QLMob_About_1{
+            padding: 12px 0px;
+        }
+        .QLMob_About_2_1{
+			padding: 12px 0px;
+            h5{
+                color: #000;
+            }
+        }
+        .QLMob_About_3{
+            background-color: #E9E51C;
+            padding: 24px;
+            color: #b80f0f;
+            p{
+                font-size: 20px;
+            }
+        }
+        .QLMob_About_4{
+            background-color: #b80f0f;
+            padding: 24px;
+            color: #E9E51C;
+            p{
+                font-size: 20px;
+                a{
+                    color: #E9E51C;
+                    @include hovers(#ffffff, #fbd0d0);
+                    text-decoration: none;
+                }
+            }
+        }
+        .QLMob_About_2{
+            padding: 24px 0px;
+			img{
+				border: 6px solid #f5f5f5;
+			}
+        } 
+    }
+    #QLMob_Gallery{
+        background-color: #333;
+        padding: 42px 0px 0px;
+        h2{
+            color: #ffffff;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 19px;
+        }
+        hr{
+            border-top-color: rgba(42,102,156,0.3);                
+            border-top-width: 3px;                
+        }
+        /*.carousel.slide{
+            background-color: #ffffff;
+            padding-top: 20px;
+            height: 470px;
+            [class*="carousel-control"]{
+                font-size: 36px;
+                color: #2A669C;
+                @include hover;
+            }
+            .carousel-indicators{
+                top: -3px;
+                bottom: auto;
+                li{
+                    background-color: rgba(42,102,156,0.3);
+                    &.active{
+                        background-color: rgba(238,46,45,1.00);
+                    } 
+                }
+            }
+            @media (max-width: 767px){
+                height: 370px;
+            }
+        }
+        .carousel-item{
+            .carousel_item_1{
+                height: 450px;
+                @include flex;
+                @include align-items(center);
+                position: relative;
+                .carousel-caption{
+                    display: none;
+                    background-color: rgba(255,255,255,0.53);
+                    position: absolute;
+                    left: 0px;
+                    top: auto;
+                    right: 0px;
+                    bottom: 0px;
+                    z-index: 1;
+                }
+                @media (max-width: 767px){
+                    max-height: 350px;
+                }
+            }
+            img{
+                width: auto;
+                max-height: 450px;
+                max-width: 100%;
+                display: block;
+                margin: auto;
+                @media (max-width: 767px){
+                    max-height: 350px;
+                }
+            }
+        }*/
+    }
+    #QLMob_Gmap{
+        background-color: #d41111;
+        .QLMob_Gmap_1{
+            padding: 36px;
+            h2{
+                color: #E9E51C; 
+            }
+            h3, h4, h5, p{
+                color: #ffffff;
+            }
+            hr{
+                @include hr(#e21212, #c61010); 
+            }
+            p{
+                a{
+                    color: #ffffff;
+                    text-decoration: none;
+					@include hovers(#f3f182, #D8D514);
+                }
+            }
+			label{
+				.invalid-feedback{
+					color: #F7F1A9;
+					padding: 6px 12px 0px;
+				}
+			}
+			.was-validated .form-control:valid, .form-control.is-valid, .was-validated .custom-select:valid, .custom-select.is-valid{
+				border-color: #7bf481;
+				@include box-shadow(none);
+			}
+        }
+        .QLMob_Gmap_2{
+			border: 6px solid #c61010;
+            overflow: hidden;
+            margin: 24px;
+            iframe{
+                margin: 0px 0px -6px;
+            }
+        }
+    }
+	//documents
+	#QLMob_Docs{
+		.QLMob_Docs_1{
+			padding: 42px 0px;
+			h1{
+				font-size: 26px;
+				font-weight: normal;
+				text-transform: uppercase;
+			}
+			a{
+				word-break: break-all;
+			}
+			ul{
+				li{
+					list-style: none;
+					position: relative;
+					&:before{
+						content: "";
+						background-color: #29659b;
+						display: block;
+						width: 9px;
+						height: 9px;
+						border-radius: 100%;
+						position: absolute;
+						left: auto;
+						right: 100%;
+						top: 7px;
+						margin-right: 9px;
+						z-index: 2;
+					}
+					&:after{
+						content: "";
+						background-color: #ee2c2c;
+						display: block;
+						width: 9px;
+						height: 9px;
+						border-radius: 100%;
+						position: absolute;
+						left: auto;
+						right: 100%;
+						top: 5px;
+						margin-right: 8px;
+						z-index: 1;
+					}
+				}
+			}
+		}
+	}
+    footer{
+        padding: 12px;
+        .QLMob_socials{
+            text-align: center;
+            padding: 12px 0px;
+            h2{
+                font-size: 14px;
+                font-weight: bold;
+                display: block;
+                margin-bottom: 1px;
+            }
+            a{
+                font-size: 36px;
+                line-height: 48px;
+                display: inline-block;
+                width: 48px;
+                height: 48px;
+                margin: 0px 3px;
+                @media (min-width: 576px){
+                    margin: 0px 6px;
+                }
+            }
+        }
+        .icon{
+            width: 32px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #QLMob_cpyrts{
+            h2{
+                font-size: 11px;
+                display: none;
+            }
+            p{
+                font-size: 9px;
+                margin: 0px;
+                line-height: 178%;
+				margin-bottom: 6px;
+                a{
+                    text-decoration: none;
+					color: #333;
+					padding: 6px 0px;
+					@include hover;
+                    &.alienGT{
+                        font-size: 15px;
+                        color: #333;
+                        white-space: nowrap;
+						padding: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
