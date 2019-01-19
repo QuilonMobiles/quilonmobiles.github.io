@@ -45,40 +45,57 @@
 <main>
 <!-- InstanceBeginEditable name="QLMob_Main1" -->
 <section id="QLMob_Gmap">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="QLMob_Gmap_1">
-          <h2>Contact Us</h2>
-          <hr>
-          <h3>Better yet, see us in person!</h3>
-          <address>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="QLMob_Gmap_1">
+        <h2>Contact Us</h2>
+        <hr>
+        <h3>Better yet, see us in person!</h3>
+        <address>
           <p>Institute of Mobile Phone Repairing and Technology, 2<sup>nd</sup> floor, Paris Tower, Andamukkom, Beach Road, Kollam, Kerala, India, PIN-691001</p>
           <p><strong>Phone Number:</strong> <a href="tel:+919152691275">+91-9152691275</a></p>
           <p><strong>Landmark:</strong> Near Kalyan Jwelleres</p>
-          </address>
-          <h3>Quilon Mobiles</h3>
-          <h4>Hours</h4>
-          <p><a href="#" class="dropdown" data-toggle="collapse" data-target="#toggle_open_close" ><span id="toggle_open_close_today">Open</span> Today <span class="no-wrap"><span id="toggle_time_today">10:am to 7:00pm</span> <i class="fas fa-angle-down"></i></span></a></p>
-          <p id="toggle_open_close" class="collapse"><strong>Open weekdays</strong><br>
-            Mon 10:00 am – 7:00 pm<br>
-            Tue 10:00 am – 7:00 pm<br>
-            Wed 10:00 am – 7:00 pm<br>
-            Thu 10:00 am – 7:00 pm<br>
-            Fri 10:00 am – 7:00 pm<br>
-            Sat 10:00 am – 7:00 pm<br>
-            <strong>Close weekdays</strong><br>
-            Sun Closed</p>
-          <br>
-          <a href="mailto:quilonMobiles.institute@gmail.com" class="btn btn-primary btn-lg">Drop us a line</a></div>
-      </div>
-      <div class="col-sm-6">
-        <div class="QLMob_Gmap_2"> 
-          <!--          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=153iDd5odBXfKm8DeFYI20FuTo0A&hl=en" width="640" height="480" style="width: 100%; border:0; height: 450px; padding: 0px;"></iframe>-->
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.959092528392!2d76.58887901574973!3d8.88339549150461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x903e32d316dc31ec!2sQUILON+MOBILES+PHONE+REPAIRING+INSTITUTE+%26+TRAINING+CENTRE!5e0!3m2!1sen!2sin!4v1545650628130" style="width: 100%; border:0; height: 450px; padding: 0px;" allowfullscreen></iframe>
+        </address>
+        <h3>Quilon Mobiles</h3>
+        <h4>Hours</h4>
+        <p><a href="#" class="dropdown" data-toggle="collapse" data-target="#toggle_open_close" ><span id="toggle_open_close_today">Open</span> Today <span class="no-wrap"><span id="toggle_time_today">10:am to 7:00pm</span> <i class="fas fa-angle-down"></i></span></a></p>
+        <p id="toggle_open_close" class="collapse"><strong>Open weekdays</strong><br>
+          Mon 10:00 am – 7:00 pm<br>
+          Tue 10:00 am – 7:00 pm<br>
+          Wed 10:00 am – 7:00 pm<br>
+          Thu 10:00 am – 7:00 pm<br>
+          Fri 10:00 am – 7:00 pm<br>
+          Sat 10:00 am – 7:00 pm<br>
+          <strong>Close weekdays</strong><br>
+          Sun Closed</p><br>
+          <a href="#" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#QLMob_form1">Get in Touch</a>
+          <div class="QLMob_form collapse" id="QLMob_form1">
+              <form action="contact.php" method="post" id="QLMob_Contact_form">
+                  <div class="form-group">
+                      <label><input type="text" name="name1" class="form-control" placeholder="Name"></label>
+                  </div>
+                  <div class="form-group">
+                      <label><input type="email" name="email1" class="form-control" placeholder="Email"></label>
+                      </div>
+                  <div class="form-group">
+                      <label><textarea name="msg1" rows="3" class="form-control" placeholder="Messages"></textarea></label>
+                  </div>
+                  <div class="btn-group">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="reset" class="btn btn-secondary">Reset</button>
+                  </div>
+              </form>
+          </div>
+        
         </div>
-      </div>
     </div>
-  </section>
+    <div class="col-sm-6">
+<!--      <div class="QLMob_Gmap_2" id="QLMob_Gmap_2" style="width: 100%; border:0; height: 450px; padding: 0px;">-->
+      <div class="QLMob_Gmap_2">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.959092528392!2d76.58887901574973!3d8.88339549150461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x903e32d316dc31ec!2sQUILON+MOBILES+PHONE+REPAIRING+INSTITUTE+%26+TRAINING+CENTRE!5e0!3m2!1sen!2sin!4v1545650628130" style="width: 100%; border:0; height: 450px; padding: 0px;" allowfullscreen></iframe>      </div>
+    </div>
+  </div>
+</section>
 <!-- InstanceEndEditable -->
 </main>
 <footer>
